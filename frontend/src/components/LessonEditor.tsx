@@ -9,20 +9,26 @@ type SaveState = "saved" | "dirty" | "saving" | "error" | "conflict";
 const MAX = 45;
 const draftKey = (id: string) => `kta-draft-${id}`;
 
-function AutoTextarea({ value, onChange, className, placeholder, mono }: { value: string; onChange: (v: string) => void; className?: string; placeholder?: string; mono?: boolean }) {
+function AutoTextarea({ value, onChange, className, placeholder, mono, autoFocus, onBlur }: {
+  value: string; onChange: (v: string) => void; className?: string; placeholder?: string; mono?: boolean;
+  autoFocus?: boolean; onBlur?: () => void;
+}) {
   const ref = useRef<HTMLTextAreaElement>(null);
   useEffect(() => {
     const el = ref.current;
     if (el) { el.style.height = "auto"; el.style.height = `${el.scrollHeight + 2}px`; }
   }, [value]);
-  return <textarea ref={ref} value={value} placeholder={placeholder} onChange={(e) => onChange(e.target.value)}
+  return <textarea ref={ref} value={value} placeholder={placeholder} autoFocus={autoFocus} onBlur={onBlur}
+    onChange={(e) => onChange(e.target.value)}
     className={cn("field resize-none leading-relaxed", mono && "font-mono text-[13px]", className)} rows={2} />;
 }
 
 function SectionEditor({ s, onChange, onMove, onDelete, first, last }: {
   s: Section; onChange: (s: Section) => void; onMove: (d: -1 | 1) => void; onDelete: () => void; first: boolean; last: boolean;
 }) {
-  const [preview, setPreview] = useState(false);
+  // Sections show formatted Markdown; clicking the text (or the pencil) opens the raw source for
+  // editing, and leaving the box shows the formatted version again.
+  const [preview, setPreview] = useState(true);
   return (
     <Card className="p-4">
       <div className="flex flex-wrap items-center gap-2">
@@ -44,8 +50,20 @@ function SectionEditor({ s, onChange, onMove, onDelete, first, last }: {
         </div>
       </div>
       <div className="mt-3">
-        {preview ? <div className="rounded-xl border border-ink-100 bg-ink-50/40 p-4"><Markdown>{s.content}</Markdown></div>
-          : <AutoTextarea value={s.content} onChange={(v) => onChange({ ...s, content: v })} mono placeholder="Markdown content…" />}
+        {preview ? (
+          <div role="button" tabIndex={0} title="Click to edit" onClick={() => setPreview(false)}
+            onKeyDown={(e) => { if (e.key === "Enter") setPreview(false); }}
+            className="group relative cursor-text rounded-xl border border-ink-100 bg-ink-50/40 p-4 transition hover:border-brand-200 hover:bg-white">
+            <span className="pointer-events-none absolute right-3 top-2 hidden items-center gap-1 text-[11px] text-ink-400 group-hover:flex"><Pencil className="h-3 w-3" />Click to edit</span>
+            {s.content.trim() ? <Markdown>{s.content}</Markdown> : <p className="text-sm italic text-ink-400">Empty section - click to add content</p>}
+          </div>
+        ) : (
+          <div>
+            <AutoTextarea value={s.content} onChange={(v) => onChange({ ...s, content: v })} mono autoFocus onBlur={() => setPreview(true)}
+              placeholder="Write in Markdown: **bold**, ### heading, - list, `code`" />
+            <p className="mt-1.5 text-[11px] text-ink-400">Markdown: **bold**, *italic*, ### heading, - list, `code`, [S1] citation. Click outside the box to see it formatted.</p>
+          </div>
+        )}
       </div>
     </Card>
   );
