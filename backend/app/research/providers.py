@@ -24,10 +24,10 @@ from bs4 import BeautifulSoup
 
 from ..config import settings
 
-log = logging.getLogger("learnora.research")
+log = logging.getLogger("kalvium.research")
 
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
-      "Chrome/130.0 Safari/537.36 LearnoraResearchBot/1.0")
+      "Chrome/130.0 Safari/537.36 KalviumTeachingAIResearchBot/1.0")
 HEADERS = {"User-Agent": UA, "Accept-Language": "en-US,en;q=0.9"}
 
 

@@ -41,7 +41,7 @@ class Settings:
     research_offline: bool = field(default_factory=lambda: _env("RESEARCH_OFFLINE", "0") == "1")
 
     database_path: Path = field(
-        default_factory=lambda: Path(_env("DATABASE_PATH", str(BACKEND_DIR / "data" / "learnora.db")))
+        default_factory=lambda: Path(_env("DATABASE_PATH", str(BACKEND_DIR / "data" / "kalvium_teaching.db")))
     )
     cors_origins: list[str] = field(
         default_factory=lambda: [o.strip() for o in _env(

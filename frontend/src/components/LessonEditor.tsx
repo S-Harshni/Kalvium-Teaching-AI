@@ -7,7 +7,7 @@ import { cn, timeAgo } from "@/lib/utils";
 
 type SaveState = "saved" | "dirty" | "saving" | "error" | "conflict";
 const MAX = 45;
-const draftKey = (id: string) => `learnora-draft-${id}`;
+const draftKey = (id: string) => `kta-draft-${id}`;
 
 function AutoTextarea({ value, onChange, className, placeholder, mono }: { value: string; onChange: (v: string) => void; className?: string; placeholder?: string; mono?: boolean }) {
   const ref = useRef<HTMLTextAreaElement>(null);

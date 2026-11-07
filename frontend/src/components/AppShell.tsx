@@ -18,11 +18,11 @@ export function Logo({ dark = false }: { dark?: boolean }) {
     <Link to="/" className="flex items-center gap-2.5">
       <svg viewBox="0 0 32 32" className="h-8 w-8">
         <rect width="32" height="32" rx="9" fill={dark ? "#ffffff" : "#1e1a4a"} />
-        <path d="M10 8v16h12" stroke={dark ? "#4637c8" : "#a3a8fd"} strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-        <circle cx="21" cy="11" r="3" fill="#8080f8" />
+        <path d="M11 8v16M21 8l-8 8 8 8" stroke={dark ? "#4637c8" : "#a3a8fd"} strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="23" cy="16" r="2.5" fill="#8080f8" />
       </svg>
-      <span className={cn("font-display text-[17px] font-semibold tracking-tight", dark ? "text-white" : "text-ink-900")}>
-        Learnora<span className="text-brand-500"> AI</span>
+      <span className={cn("whitespace-nowrap font-display text-[16px] font-semibold tracking-tight", dark ? "text-white" : "text-ink-900")}>
+        Kalvium Teaching<span className="text-brand-500"> AI</span>
       </span>
     </Link>
   );

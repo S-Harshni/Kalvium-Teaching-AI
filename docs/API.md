@@ -1,4 +1,4 @@
-# Learnora AI - REST API
+# Kalvium Teaching AI - REST API
 
 Base URL: `http://localhost:8000/api`. Interactive docs (Swagger UI): `http://localhost:8000/docs`.
 All bodies are JSON. Errors return `{"detail": "message"}` or, for field validation,

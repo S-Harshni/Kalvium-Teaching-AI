@@ -129,6 +129,18 @@ match the Python glossary and FAQ.
 
 ---
 
+## Extra live run - SQL INNER and LEFT JOINs
+
+Run after the research fixes below, to confirm them on a new topic (*Explain how INNER JOIN and LEFT
+JOIN combine rows from two tables and predict the result of each on sample data.*): 7/7 steps,
+17 verified sources (Microsoft SQL Server docs and Microsoft Learn, Wikipedia, W3Schools, MySQL
+tutorial, AWS migration docs, *SQL Queries for Mere Mortals*, 5 English videos), **no duplicate
+URLs**, 174 evidence passages, 9 sections / 6 questions / 45 minutes. QC 1: **74**, passed with
+recommendations (uncited core facts such as INNER JOIN commutativity and row fan-out; minor citation
+mismatches). QC 2: **79**, passed with recommendations (dense 8-minute concept section, 4 minutes for
+6 questions, examples show answers before inviting a prediction). The same book appeared twice under
+two subtitles; book de-duplication now compares the main title only.
+
 ## Bugs found during testing and fixed
 
 | Bug | Fix |

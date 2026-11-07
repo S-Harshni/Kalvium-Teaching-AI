@@ -201,7 +201,7 @@ export default function Landing() {
       <footer className="border-t border-ink-100 py-10">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 text-xs text-ink-400">
           <Logo />
-          <p>Built for a technical evaluation · Research via public search, Open Library and YouTube · AI by Anthropic Claude</p>
+          <p>Built for the Kalvium technical evaluation - not an official Kalvium product · Research via public search, Open Library and YouTube · AI by Anthropic Claude</p>
         </div>
       </footer>
     </div>

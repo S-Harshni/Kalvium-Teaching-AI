@@ -150,7 +150,7 @@ class _PDF(FPDF):
         self.set_y(-12)
         self.set_font(self.base_font, "", 8)
         self.set_text_color(120, 120, 140)
-        self.cell(0, 8, f"Learnora AI  ·  {self.title_text}  ·  page {self.page_no()}", align="C")
+        self.cell(0, 8, f"Kalvium Teaching AI  ·  {self.title_text}  ·  page {self.page_no()}", align="C")
 
 
 def _latin1(text: str) -> str:

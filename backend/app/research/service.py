@@ -23,7 +23,7 @@ from . import providers as P
 from .reliability import TIER_SCORE, assess, classify_type, domain_of
 from .text import BM25, chunk, overlap, tokens
 
-log = logging.getLogger("learnora.research")
+log = logging.getLogger("kalvium.research")
 
 MAX_WEB_SOURCES = 10
 MAX_BOOKS = 4
@@ -177,7 +177,8 @@ def analyze_candidates(title: str, objective: str, analysis: ObjectiveAnalysis, 
     seen_titles = set()
     topic_terms = set(tokens(" ".join([title] + analysis.key_concepts[:4])))
     for c in (P.Candidate(**d) for d in raw.get("books", [])):
-        tkey = "".join(ch for ch in c.title.lower() if ch.isalnum())[:50]
+        # Same book, different editions/subtitles: compare the main title only.
+        tkey = "".join(ch for ch in c.title.split(":")[0].lower() if ch.isalnum())[:50]
         if tkey in seen_titles:
             continue
         seen_titles.add(tkey)

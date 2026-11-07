@@ -30,7 +30,7 @@ from ..research import service as research
 from . import qc_factual, qc_instructional
 from .timing import enforce_limit
 
-log = logging.getLogger("learnora.pipeline")
+log = logging.getLogger("kalvium.pipeline")
 
 STEPS = [
     ("analyze", "Understanding learning objective"),

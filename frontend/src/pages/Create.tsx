@@ -50,7 +50,7 @@ export default function Create() {
   return (
     <div className="space-y-6">
       <SectionHeader eyebrow="Lesson creation studio" title="Create a research-backed lesson"
-        description="Give a title and a learning objective. Learnora researches trusted sources, writes a 45-minute lesson, and audits it with two independent quality checks." />
+        description="Give a title and a learning objective. Kalvium Teaching AI researches trusted sources, writes a 45-minute lesson, and audits it with two independent quality checks." />
       {demoOnly && (
         <Alert tone="warn" title="Demo mode - no AI provider configured">
           Lessons will replay recorded sample output for the two sample topics (other topics get a placeholder outline). See Settings to enable live generation.

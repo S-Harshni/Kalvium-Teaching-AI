@@ -98,7 +98,7 @@ async function req<T>(path: string, init?: RequestInit): Promise<T> {
   try {
     res = await fetch(`/api${path}`, { headers: { "Content-Type": "application/json" }, ...init });
   } catch {
-    throw new ApiError("Cannot reach the Learnora server. Check that the backend is running, then try again.", 0);
+    throw new ApiError("Cannot reach the Kalvium Teaching AI server. Check that the backend is running, then try again.", 0);
   }
   if (res.status === 204) return undefined as T;
   const body = await res.json().catch(() => ({}));

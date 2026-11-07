@@ -1,6 +1,8 @@
-# Learnora AI
+# Kalvium Teaching AI
 
 **Learn Smarter. Teach Better. Create with Intelligence.**
+
+> Built for the Kalvium technical evaluation. Not an official Kalvium product.
 
 An AI-powered lesson creation tool. Give it a **lesson title** and a **learning objective**; it
 researches books, websites and YouTube videos, writes a structured lesson that fits in **45
@@ -52,6 +54,10 @@ recordings of real live runs (research, lesson, both QC reports), and every scre
 labelled "Demo · sample output". Other topics get an obvious placeholder outline. Nothing pretends
 that live research happened.
 
+### Demo video
+
+Step-by-step dry run, Windows recording options and a timed script: **[docs/DEMO_SCRIPT.md](docs/DEMO_SCRIPT.md)**.
+
 ### Single-port mode
 
 `cd frontend && npm run build` - the backend then also serves the built UI at http://localhost:8000.
@@ -87,7 +93,7 @@ A failed step can be retried on its own, and its predecessors' outputs are reuse
 ### Architecture
 
 ```
-learnora-ai/
+Kalvium-Teaching-AI/
 ├── backend/                     FastAPI + SQLite
 │   ├── app/
 │   │   ├── main.py              REST API (see docs/API.md, or /docs when running)

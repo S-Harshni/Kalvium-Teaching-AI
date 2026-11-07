@@ -1,4 +1,4 @@
-"""FastAPI application: REST API for the Learnora AI lesson workflow.
+"""FastAPI application: REST API for the Kalvium Teaching AI lesson workflow.
 
 Interactive API docs are served at /docs (Swagger UI) - see also docs/API.md.
 """
@@ -25,9 +25,9 @@ from .services import pipeline
 from .services.apply import apply_issue
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
-log = logging.getLogger("learnora")
+log = logging.getLogger("kalvium")
 
-app = FastAPI(title="Learnora AI API", version="1.0.0",
+app = FastAPI(title="Kalvium Teaching AI API", version="1.0.0",
               description="Research-backed lesson generation with two independent QC layers.")
 app.add_middleware(CORSMiddleware, allow_origins=settings.cors_origins, allow_methods=["*"], allow_headers=["*"])
 
