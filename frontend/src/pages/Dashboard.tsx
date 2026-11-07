@@ -21,13 +21,14 @@ export function LessonRow({ l }: { l: LessonSummary }) {
           {l.demo && <Badge tone="warn">demo</Badge>}
         </div>
         <div className="mt-0.5 truncate text-xs text-ink-500">{l.objective}</div>
+        {/* Scores sit under the title so a narrow column never squeezes the title away. */}
+        <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
+          {l.qc_factual && <Badge tone={VERDICT_TONE[l.qc_factual.verdict]}>QC1 {l.qc_factual.score}{stale(l.qc_factual) ? "*" : ""}</Badge>}
+          {l.qc_instructional && <Badge tone={VERDICT_TONE[l.qc_instructional.verdict]}>QC2 {l.qc_instructional.score}{stale(l.qc_instructional) ? "*" : ""}</Badge>}
+          {l.total_minutes != null && <span className="inline-flex items-center gap-1 text-[11px] text-ink-400"><Clock className="h-3 w-3" />{l.total_minutes} min</span>}
+          <span className="text-[11px] text-ink-400">· {timeAgo(l.updated_at)}</span>
+        </div>
       </div>
-      <div className="hidden items-center gap-2 md:flex">
-        {l.qc_factual && <Badge tone={VERDICT_TONE[l.qc_factual.verdict]}>QC1 {l.qc_factual.score}{stale(l.qc_factual) ? "*" : ""}</Badge>}
-        {l.qc_instructional && <Badge tone={VERDICT_TONE[l.qc_instructional.verdict]}>QC2 {l.qc_instructional.score}{stale(l.qc_instructional) ? "*" : ""}</Badge>}
-        {l.total_minutes != null && <span className="inline-flex w-14 items-center gap-1 text-xs text-ink-400"><Clock className="h-3 w-3" />{l.total_minutes}m</span>}
-      </div>
-      <span className="hidden w-20 text-right text-xs text-ink-400 sm:block">{timeAgo(l.updated_at)}</span>
       <ArrowRight className="h-4 w-4 text-ink-300 transition group-hover:translate-x-0.5 group-hover:text-ink-500" />
     </Link>
   );
