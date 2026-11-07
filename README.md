@@ -14,6 +14,15 @@ reject QC recommendations, preview the student view, and export everything as PD
 
 ## Quick start
 
+### One-click start (Windows)
+
+Double-click **`start.bat`**. The first run sets up Python packages (and builds the interface if
+`frontend/dist` is missing, which needs Node.js); then the whole app runs at
+**http://localhost:8000** and opens in your browser. Close the window to stop it.
+The ZIP release already contains the built interface, so it only needs Python.
+
+### Manual setup
+
 Requirements: **Python 3.11+** and **Node.js 18+**.
 
 ```bash
