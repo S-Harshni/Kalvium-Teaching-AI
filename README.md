@@ -12,6 +12,18 @@ reject QC recommendations, preview the student view, and export everything as PD
 
 ---
 
+## Screenshots
+
+| | |
+|---|---|
+| <img src="docs/screenshots/01-landing.png" alt="Landing page" width="100%"><br><sub>Landing page</sub> | <img src="docs/screenshots/02-dashboard.png" alt="Dashboard" width="100%"><br><sub>Dashboard</sub> |
+| <img src="docs/screenshots/03-create.png" alt="Lesson creation studio" width="100%"><br><sub>Lesson creation studio</sub> | <img src="docs/screenshots/04-workflow.png" alt="7-step workflow with objective analysis" width="100%"><br><sub>7-step workflow with objective analysis</sub> |
+| <img src="docs/screenshots/05-research.png" alt="Research workspace: verified sources with reliability ratings" width="100%"><br><sub>Research workspace: verified sources with reliability ratings</sub> | <img src="docs/screenshots/06-qc-factual.png" alt="QC Layer 1: research & factual accuracy, with apply/reject" width="100%"><br><sub>QC Layer 1: research & factual accuracy, with apply/reject</sub> |
+| <img src="docs/screenshots/07-qc-instructional.png" alt="QC Layer 2: instructional quality rubric and timing" width="100%"><br><sub>QC Layer 2: instructional quality rubric and timing</sub> | <img src="docs/screenshots/08-editor.png" alt="Lesson editor with autosave and formatted sections" width="100%"><br><sub>Lesson editor with autosave and formatted sections</sub> |
+| <img src="docs/screenshots/09-student-view.png" alt="Student view" width="100%"><br><sub>Student view</sub> | <img src="docs/screenshots/10-export.png" alt="Export: PDF, Markdown, JSON" width="100%"><br><sub>Export: PDF, Markdown, JSON</sub> |
+
+---
+
 ## Quick start
 
 ### One-click start (Windows)

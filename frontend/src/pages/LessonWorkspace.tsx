@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { ArrowLeft, BookOpen, CheckCircle2, Clock, Download, ExternalLink, Eye, GraduationCap, Library, ListChecks, Pencil, RefreshCw, ShieldCheck, Trash2 } from "lucide-react";
 import { api, type Lesson } from "@/lib/api";
 import { useLesson } from "@/lib/useLesson";
@@ -65,7 +65,9 @@ export default function LessonWorkspace() {
   const { id } = useParams();
   const nav = useNavigate();
   const { lesson, setLesson, error, refresh } = useLesson(id);
-  const [tab, setTab] = useState<Tab | null>(null);
+  // ?tab=research|editor|factual|instructional|preview|export opens a tab directly (shareable link).
+  const [params] = useSearchParams();
+  const [tab, setTab] = useState<Tab | null>((params.get("tab") as Tab | null) ?? null);
   const [rerunning, setRerunning] = useState<string | null>(null);
   const [actionError, setActionError] = useState<string | null>(null);
   const [retrying, setRetrying] = useState(false);
